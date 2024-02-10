@@ -70,7 +70,7 @@ h1, h2, h3, h4, p {
 }
 
 .dark-bg {
-  @apply hover:bg-gray-200 p-3
+  @apply hover:bg-gray-200 
 }
 .btn>button{
   @apply bg-gray-200 bg-opacity-50 text-gray-600

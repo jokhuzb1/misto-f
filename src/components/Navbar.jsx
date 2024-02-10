@@ -30,7 +30,7 @@ export default function Navbar() {
             <FaPinterest/>
             </div>
         </div>
-    <nav className='grid grid-cols-3 sm:grid-cols-3  py-3 bg-white font-Leauge  text-md border-b-2 px-6 md:px-16 xl:px-60 '>
+    <nav className='grid grid-cols-3 sm:grid-cols-3 gap-1 py-3 bg-white font-Leauge  text-md border-b-2 px-3 md:px-16 xl:px-60 '>
       <div  >
         <span className='col-1 flex justify-start text-4xl font-PlayfairDisplay font-black blur-[0.6px] '
         ><NavLink to='/'>MiSto</NavLink></span>
@@ -45,20 +45,20 @@ export default function Navbar() {
         <li ><NavItem to='contact' name='Contact' /></li>
       </ul>
 
-      <ul className='flex col-1 justify-center md:justify-end place-items-center'>
+      <ul className='flex col-1 -mr-6 justify-center md:justify-end place-items-center'>
         <li className='icon'><CiSearch/></li>
         <li className='icon'><CiHeart/></li>
         <li className='icon'><CgProfile/></li>
        <Cart/>
       </ul>
 
-      <span onClick={()=>setToggleBurger(!toggleBurger)} className='relative md:hidden font-black text-3xl' >
+      <span onClick={()=>setToggleBurger(!toggleBurger)} className='relative  md:hidden font-black text-3xl' >
       <span className='absolute right-0 top-2 cursor-pointer'>&#9776;</span>
       </span>
     </nav>
 
     {toggleBurger && createPortal(
-        <ul className={` mobile md:hidden fixed top-10 left-0 right-0 bottom-0 z-20  bg-white flex flex-col text-center bg-opacity-90 text-3xl origin-top animate-slider-top `}>
+        <ul className={` mobile font-thin md:hidden fixed top-10 left-0 right-0 bottom-0 z-20  bg-white flex flex-col text-center bg-opacity-90 text-md origin-top animate-slider-top `}>
         <li onClick={()=>setToggleBurger(!toggleBurger)} className='self-start  text-sale rounded-fullx cursor-pointer '>&times;</li>
         <li className='dark-bg' onClick={()=>setToggleBurger(!toggleBurger)} ><NavItem to='/' name='Home' /></li>
         <li className='dark-bg' onClick={()=>setToggleBurger(!toggleBurger)} ><NavItem to='about' name='About'  /></li>

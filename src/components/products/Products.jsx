@@ -50,8 +50,8 @@ export default function Products({
 	return (
 		<Tabs value={activeTab} className="">
 			{showFilter && (
-				<div className="flex justify-between align-center text-center uppercase text-nowrap">
-					<h2 className="self-center mt-2 uppercase">{category}</h2>
+				<div className="flex flex-col md:flex-row md:justify-between align-center text-center uppercase text-nowrap">
+					<h2 className="block self-center mt-2 uppercase">{category}</h2>
 					<TabsHeader
 						className="rounded-none border-b border-blue-gray-50 bg-transparent p-0 my-5"
 						indicatorProps={{
