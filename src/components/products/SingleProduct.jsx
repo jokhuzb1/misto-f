@@ -9,7 +9,7 @@ export default function SingleProduct({item, listView}) {
 
   const dispatch = useDispatch()
   
-  const list ='flex justify-between max-h-40 overflow-hidden  px-20'
+  const list ='flex justify-between max-h-40 overflow-hidden p-1  md:px-20'
   const card = ' max-w-64 min-w-54 max-h-96 min-h-96'
   const {id, title, price, category, description, image,rating} = item;
   const editText = title?.slice(0, 20)
@@ -17,16 +17,16 @@ export default function SingleProduct({item, listView}) {
     console.log(id)
   },[])
   return (
-    <div className={`mb-20 bg-cream shadow-md`}>
+    <div className={`mb-5 md:mb-20 bg-cream shadow-md text-nowrap`}>
     <Link to={`${listView ? '':'/singleProduct/'+ id}`}>
       <div className={`relative ${listView ? list : card}`}>
-        <img src={image} alt="" className={`${listView ?'object-scale-down w-40' :'object-fill  h-72 w-64'}  mix-blend-multiply mb-5` } />
+        <img src={image} alt="" className={`${listView ?'object-scale-down w-20 lg:w-40 ' :'object-fill  h-72 w-64'}  mix-blend-multiply mb-5` } />
         <div className='p-2 flex flex-col justify-between '>
         <h2 className='capitalize  text-gray-600 text-lg font-thin ' >{editText}</h2>
         {listView && (
           <div className='flex justify-between'>
 
-          <Button onClick={()=>dispatch(addItem({id, title, price, category, image, rating, description}))} className='rounded-none mr-1'>ADD TO CART</Button>
+          <Button onClick={()=>dispatch(addItem({id, title, price, category, image, rating, description}))} className='rounded-none mr-1 '>ADD TO CART</Button>
           <Link to={`/singleProduct/${id}`}><Button className='mr-2 rounded-none cursor-pointer'variant='outlined'>View Item</Button></Link>
           </div>
         )}
